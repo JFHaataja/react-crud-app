@@ -1,1 +1,22 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+$white: #eaeaea;
+$dark-purple: #240026;
+$primary: #ff69b4;
+$secondary: #dea4c1;
+$danger: ​#ff6347;
+$light-purple: ​#3c203d;
+$light: #dcdcdc;
+$dark-table: #240026;
+
+body {
+    background-color: $dark-purple;
+}
+  
+.App {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
