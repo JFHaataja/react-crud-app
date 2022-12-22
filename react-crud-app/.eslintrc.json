@@ -18,6 +18,7 @@
   },
   "plugins": ["react"],
   "rules": {
-    "indent": "error"
+    "indent": "error",
+    "prettier/prettier": ["error"]
   }
 }
