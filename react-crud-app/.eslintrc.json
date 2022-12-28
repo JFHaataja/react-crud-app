@@ -21,6 +21,7 @@
   "rules": {
     "indent": "off",
     "require-jsdoc": "off",
-    "jsdoc/require-jsdoc": "off"
+    "jsdoc/require-jsdoc": "off",
+    "react/prop-types": "off"
   }
 }
