@@ -1,6 +1,5 @@
 import Form from 'react-bootstrap/Form'
-import PropTypes from 'prop-types';
-
+import 'assets/App.scss'
 
 function RadioButton({checkedOrNot, handleChange, radioButtonLabel, radioButtonValue}) {
   return (
@@ -14,12 +13,5 @@ function RadioButton({checkedOrNot, handleChange, radioButtonLabel, radioButtonV
         />
   )
 }
-
-RadioButton.propTypes = {
-    checkedOrNot: PropTypes.bool,
-    handleChange: PropTypes.func,
-    radioButtonLabel: PropTypes.string,
-    radioButtonValue: PropTypes.string 
-  };
 
 export default RadioButton;
