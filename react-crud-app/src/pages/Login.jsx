@@ -1,7 +1,7 @@
 import 'assets/App.scss'
 import { useState } from 'react'
 import md5 from 'md5'
-import LoginService from 'features/auth/services/Auth'
+import LoginService from 'services/Auth'
 import Button from 'components/elements/Button/PrimaryButton/PrimaryButton'
 import Form from 'react-bootstrap/Form'
 import Container from 'react-bootstrap/Container'
