@@ -78,7 +78,7 @@ const emptyFields = () => {
             <p>Please Log in to check out my demo app.</p>
 
             <Form.Group className="mb-3 mt-2" controlId="username">
-              <Form.Label className='pb-0'>User Name</Form.Label>
+              <Form.Label className='pb-0'>Username</Form.Label>
               <Form.Control value={username} placeholder="Username" onChange={({ target }) => setUsername(target.value)} required/>
             </Form.Group>
 

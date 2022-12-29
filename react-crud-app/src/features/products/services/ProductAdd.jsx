@@ -1,6 +1,6 @@
 import 'assets/App.scss'
 import {useState} from 'react'
-import ProductService from 'features/products/services/Product'
+import ProductService from 'services/Product'
 import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import FormGroup from 'components/elements/Form/FormGroup/FormGroup/FormGroup'
