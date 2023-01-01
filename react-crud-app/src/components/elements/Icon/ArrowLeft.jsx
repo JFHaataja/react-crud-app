@@ -1,10 +1,9 @@
-import { FiArrowLeft } from "react-icons/fi"
-
+import { FiArrowLeft } from 'react-icons/fi';
 
 export default function ArrowLeft() {
-    return (
-        <>
-        <FiArrowLeft className='me-2'/>
-        </>
-    )
-  }
+ return (
+  <>
+   <FiArrowLeft className="me-2" />
+  </>
+ );
+}
