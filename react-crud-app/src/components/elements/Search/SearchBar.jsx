@@ -1,7 +1,7 @@
 import 'assets/App.scss';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Search from 'components/elements/Icon/Search';
+import Search from 'assets/Icon/Search';
 
 export default function SearchBar({ placeHolder, searchValue, onChangeHandler }) {
  return (

@@ -4,8 +4,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'components/elements/Button/PrimaryButton/PrimaryButton';
 import { Link } from 'react-router-dom';
-import Cart from 'components/elements/Icon/Cart';
-import LogOut from 'components/elements/Icon/LogOut';
+import Cart from 'assets/Icon/Cart';
+import LogOut from 'assets/Icon/LogOut';
 
 function NavbarDark({
  clickHandler,
