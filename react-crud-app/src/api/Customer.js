@@ -2,8 +2,8 @@ import axios from 'axios';
 
 // second localhost baseUrl is for testing purposes (remember to comment it out when done testing)
 
-// const baseUrl = "https://backendnw.azurewebsites.net/nw/users"
-const baseUrl = 'https://localhost:7109/nw/users';
+//  const baseUrl = "https://backendnw.azurewebsites.net/nw/customer"
+const baseUrl = 'https://localhost:7109/nw/customer';
 
 let token = null;
 
@@ -20,11 +20,12 @@ const getAll = () => {
  return request.then((response) => response.data);
 };
 
-const create = (newUser) => {
+const create = (newCustomer) => {
  const config = {
   headers: { Authorization: token },
  };
- return axios.post(baseUrl, newUser, config);
+
+ return axios.post(baseUrl, newCustomer, config);
 };
 
 const remove = (id) => {
@@ -38,7 +39,8 @@ const update = (object) => {
  const config = {
   headers: { Authorization: token },
  };
- return axios.put(`${baseUrl}/${object.userId}`, object, config);
+
+ return axios.put(`${baseUrl}/${object.customerId}`, object, config);
 };
-   
+
 export default { setToken, getAll, create, remove, update };
