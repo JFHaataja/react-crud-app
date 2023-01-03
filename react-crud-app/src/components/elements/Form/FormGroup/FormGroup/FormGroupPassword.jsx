@@ -7,6 +7,8 @@ export default function PasswordInputGroup({
  passwordPlaceholder,
  onChangeHandler,
  requiredOrNot,
+ formControlId,
+ dataCy
 }) {
  return (
   <>
@@ -18,6 +20,9 @@ export default function PasswordInputGroup({
      placeholder={passwordPlaceholder}
      onChange={onChangeHandler}
      required={requiredOrNot}
+     id={formControlId}
+     data-cy={dataCy}
+     className="rounded-20"
     />
    </Form.Group>
   </>

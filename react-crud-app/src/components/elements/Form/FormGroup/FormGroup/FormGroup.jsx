@@ -23,6 +23,7 @@ function FormGroup({
      maxLength={inputMaxLength}
      minLength={inputMinLength}
      onChange={onChangeHandler}
+     className="rounded-20"
     />
    </Form.Group>
   </>
