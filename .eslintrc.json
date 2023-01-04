@@ -1,35 +1,35 @@
 {
- "env": {
-  "browser": true,
-  "es2021": true
- },
- "settings": {
-  "react": {
-   "version": "detect"
-  }
- },
- "extends": [
-  "google",
-  "eslint:recommended",
-  "plugin:react/recommended",
-  "plugin:react/jsx-runtime",
-  "plugin:jsdoc/recommended",
-  "prettier"
- ],
- "overrides": [
-  {
-   "files": ["**/*.spec.js", "**/*.spec.jsx", "**/*_spec.cy.js", "**/*.cy.js"]
-  }
- ],
- "parserOptions": {
-  "ecmaVersion": "latest",
-  "sourceType": "module"
- },
- "plugins": ["react", "jsdoc"],
- "rules": {
-  "indent": "off",
-  "require-jsdoc": "off",
-  "jsdoc/require-jsdoc": "off",
-  "react/prop-types": "off"
- }
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
+    "extends": [
+        "google",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:jsdoc/recommended",
+        "prettier"
+    ],
+    "overrides": [
+        {
+            "files": ["**/*.spec.js", "**/*.spec.jsx", "**/*_spec.cy.js", "**/*.cy.js"]
+        }
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["react", "jsdoc"],
+    "rules": {
+        "indent": "off",
+        "require-jsdoc": "off",
+        "jsdoc/require-jsdoc": "off",
+        "react/prop-types": "off"
+    }
 }

@@ -2,29 +2,29 @@ import Button from 'react-bootstrap/Button';
 import 'assets/App.scss';
 
 function PrimaryButton({
- buttonText,
- clickHandler,
- btnVariant,
- btnType,
- startIcon,
- endIcon,
- buttonId,
- dataCy,
+    buttonText,
+    clickHandler,
+    btnVariant,
+    btnType,
+    startIcon,
+    endIcon,
+    buttonId,
+    dataCy,
 }) {
- return (
-  <Button
-   variant={btnVariant}
-   type={btnType}
-   className="me-2 rounded-pill py-2 px-3 my-2 my-md-0"
-   onClick={clickHandler}
-   id={buttonId}
-   data-cy={dataCy}
-  >
-   {startIcon}
-   {buttonText}
-   {endIcon}
-  </Button>
- );
+    return (
+        <Button
+            variant={btnVariant}
+            type={btnType}
+            className="me-2 rounded-pill py-2 px-3 my-2 my-md-0"
+            onClick={clickHandler}
+            id={buttonId}
+            data-cy={dataCy}
+        >
+            {startIcon}
+            {buttonText}
+            {endIcon}
+        </Button>
+    );
 }
 
 export default PrimaryButton;
