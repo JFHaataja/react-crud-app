@@ -13,7 +13,7 @@ import Message from 'components/elements/Message/Message';
 const App = () => {
     const [spinner, showSpinner] = useState('false');
     const [message, setMessage] = useState('');
-    const [isPositive, setIsPositive] = useState(true);
+    const [positiveMessage, setPositiveMessage] = useState(true);
     const [showMessage, setShowMessage] = useState('');
     const [loggedInUser, setLoggedInUser] = useState('');
     const [adminUser, setAdminUser] = useState('');
@@ -49,7 +49,7 @@ const App = () => {
                             spinner={spinner}
                             showSpinner={showSpinner}
                             setMessage={setMessage}
-                            setIsPositive={setIsPositive}
+                            setPositiveMessage={setPositiveMessage}
                             setShowMessage={setShowMessage}
                             setLoggedInUser={setLoggedInUser}
                             setAdminUser={setAdminUser}
@@ -71,7 +71,7 @@ const App = () => {
                         buttonText={'Log out'}
                         isNotAdmin={!adminUser}
                     />
-                    {showMessage && <Message message={message} isPositive={isPositive} />}
+                    {showMessage && <Message message={message} positiveMessage={positiveMessage} />}
                     <Routes>
                         <Route path="/" element={<Home />} />
 
@@ -80,7 +80,7 @@ const App = () => {
                             element={
                                 <Products
                                     setMessage={setMessage}
-                                    setIsPositive={setIsPositive}
+                                    setPositiveMessage={setPositiveMessage}
                                     setShowMessage={setShowMessage}
                                     spinner={spinner}
                                     showSpinner={showSpinner}
@@ -93,7 +93,7 @@ const App = () => {
                             element={
                                 <Customers
                                     setMessage={setMessage}
-                                    setIsPositive={setIsPositive}
+                                    setPositiveMessage={setPositiveMessage}
                                     setShowMessage={setShowMessage}
                                 />
                             }
@@ -105,7 +105,7 @@ const App = () => {
                                 element={
                                     <Users
                                         setMessage={setMessage}
-                                        setIsPositive={setIsPositive}
+                                        setPositiveMessage={setPositiveMessage}
                                         setShowMessage={setShowMessage}
                                         spinner={spinner}
                                         showSpinner={showSpinner}

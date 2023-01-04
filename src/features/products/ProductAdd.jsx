@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ArrowLeft from 'assets/Icon/ArrowLeft';
 
-const ProductAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }) => {
+const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage }) => {
     const [newProductName, setNewProductName] = useState('');
     const [newProductSupplierId, setNewProductSupplierId] = useState('');
     const [newProductCategoryId, setNewProductCategoryId] = useState('');
@@ -39,7 +39,7 @@ const ProductAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }
             .then((response) => {
                 if (response.status === 200 && newProduct.productName !== null) {
                     setMessage(`Added new Product: ${newProduct.productName}`);
-                    setIsPositive(true);
+                    setPositiveMessage(true);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
                     setTimeout(() => {
@@ -51,7 +51,7 @@ const ProductAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }
 
             .catch((error) => {
                 setMessage(error);
-                setIsPositive(false);
+                setPositiveMessage(false);
                 setShowMessage(true);
                 window.scrollBy(0, -10000);
                 setTimeout(() => {

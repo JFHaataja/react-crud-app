@@ -11,7 +11,7 @@ import PenIcon from 'assets/Icon/Pen';
 const Customer = ({
     customer,
     editCustomer,
-    setIsPositive,
+    setPositiveMessage,
     setMessage,
     setShowMessage,
     reload,
@@ -27,7 +27,7 @@ const Customer = ({
                 .then((res) => {
                     if (res.status === 200) {
                         setMessage(`Successfully removed customer ${customer.companyName}`);
-                        setIsPositive(true);
+                        setPositiveMessage(true);
                         setShowMessage(true);
                         window.scrollBy(0, -10000); // Scrollataan ylös jotta nähdään alert
 
@@ -39,7 +39,7 @@ const Customer = ({
                 })
                 .catch((error) => {
                     setMessage(error);
-                    setIsPositive(false);
+                    setPositiveMessage(false);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
 
@@ -49,7 +49,7 @@ const Customer = ({
                 });
         } else {
             setMessage('Customer deletion cancelled successfully.');
-            setIsPositive(true);
+            setPositiveMessage(true);
             setShowMessage(true);
             window.scrollBy(0, -10000);
 

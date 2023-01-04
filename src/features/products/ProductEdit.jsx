@@ -11,7 +11,7 @@ import ArrowLeft from 'assets/Icon/ArrowLeft';
 
 const ProductEdit = ({
     setEditMode,
-    setIsPositive,
+    setPositiveMessage,
     setMessage,
     setShowMessage,
     productForEdit,
@@ -55,7 +55,7 @@ const ProductEdit = ({
             .then((response) => {
                 if (response.status === 200) {
                     setMessage('Edited Product: ' + newProduct.productName);
-                    setIsPositive(true);
+                    setPositiveMessage(true);
                     setShowMessage(true);
                     setTimeout(() => {
                         setShowMessage(false);
@@ -65,7 +65,7 @@ const ProductEdit = ({
             })
             .catch((error) => {
                 setMessage(error);
-                setIsPositive(false);
+                setPositiveMessage(false);
                 setShowMessage(true);
                 setTimeout(() => {
                     setShowMessage(false);

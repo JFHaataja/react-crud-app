@@ -11,7 +11,7 @@ import { Row } from 'react-bootstrap';
 import SearchBar from 'components/elements/Search/SearchBar';
 import PlusIcon from 'assets/Icon/Plus';
 
-const Customers = ({ setMessage, setIsPositive, setShowMessage }) => {
+const Customers = ({ setMessage, setPositiveMessage, setShowMessage }) => {
     const [customers, setCustomers] = useState([]);
     const [showCustomers, setShowCustomers] = useState(false);
     const [addNewMode, setAddNewMode] = useState(false);
@@ -80,7 +80,7 @@ const Customers = ({ setMessage, setIsPositive, setShowMessage }) => {
                 {addNewMode && (
                     <CustomerAdd
                         setAddNewMode={setAddNewMode}
-                        setIsPositive={setIsPositive}
+                        setPositiveMessage={setPositiveMessage}
                         setMessage={setMessage}
                         setShowMessage={setShowMessage}
                     />
@@ -89,7 +89,7 @@ const Customers = ({ setMessage, setIsPositive, setShowMessage }) => {
                 {editMode && (
                     <CustomerEdit
                         setEditMode={setEditMode}
-                        setIsPositive={setIsPositive}
+                        setPositiveMessage={setPositiveMessage}
                         setMessage={setMessage}
                         setShowMessage={setShowMessage}
                         customerForEdit={customerForEdit}
@@ -111,7 +111,7 @@ const Customers = ({ setMessage, setIsPositive, setShowMessage }) => {
                                         customer={c}
                                         reloadNow={reloadNow}
                                         reload={reload}
-                                        setIsPositive={setIsPositive}
+                                        setPositiveMessage={setPositiveMessage}
                                         setMessage={setMessage}
                                         setShowMessage={setShowMessage}
                                         editCustomer={editCustomers}

@@ -13,7 +13,7 @@ import Spinner from 'components/elements/Spinner/Spinner';
 import LogIn from 'assets/Icon/LogIn';
 import Cart from 'assets/Icon/Cart';
 
-const Login = ({ setIsPositive, setMessage, setShowMessage, setLoggedInUser, setAdminUser }) => {
+const Login = ({ setPositiveMessage, setMessage, setShowMessage, setLoggedInUser, setAdminUser }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [buttonText, setButtonText] = useState('Login');
@@ -41,7 +41,7 @@ const Login = ({ setIsPositive, setMessage, setShowMessage, setLoggedInUser, set
                         setAdminUser(null);
                     }
                     setMessage(`Logged in as: ${userForAuth.username}`);
-                    setIsPositive(true);
+                    setPositiveMessage(true);
                     setShowMessage(true);
 
                     setTimeout(() => {
@@ -51,7 +51,7 @@ const Login = ({ setIsPositive, setMessage, setShowMessage, setLoggedInUser, set
             })
             .catch((error) => {
                 setMessage(error);
-                setIsPositive(false);
+                setPositiveMessage(false);
                 setShowMessage(true);
 
                 setTimeout(() => {

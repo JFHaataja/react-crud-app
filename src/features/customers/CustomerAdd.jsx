@@ -9,7 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ArrowLeft from 'assets/Icon/ArrowLeft';
 
-const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }) => {
+const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage }) => {
     // Komponentin tilan määritys
 
     const [newcustomerID, setNewcustomerID] = useState('');
@@ -48,7 +48,7 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
                 .then((response) => {
                     if (response.status === 200) {
                         setMessage('Added new Customer: ' + newCustomer.companyName);
-                        setIsPositive(true);
+                        setPositiveMessage(true);
                         setShowMessage(true);
                         window.scrollBy(0, -10000); // Scrollataan ylös jotta nähdään alert
                         setTimeout(() => {
@@ -59,7 +59,7 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
                 })
                 .catch((error) => {
                     setMessage(error);
-                    setIsPositive(false);
+                    setPositiveMessage(false);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
                     setTimeout(() => {
@@ -68,7 +68,7 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
                 });
         } else {
             setMessage('Customer ID can not be empty.');
-            setIsPositive(false);
+            setPositiveMessage(false);
             setShowMessage(true);
             window.scrollBy(0, -10000);
             setTimeout(() => {

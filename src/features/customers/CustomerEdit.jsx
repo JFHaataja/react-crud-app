@@ -11,7 +11,7 @@ import ArrowLeft from 'assets/Icon/ArrowLeft';
 
 const CustomerEdit = ({
     setEditMode,
-    setIsPositive,
+    setPositiveMessage,
     setMessage,
     setShowMessage,
     customerForEdit,
@@ -50,7 +50,7 @@ const CustomerEdit = ({
             .then((response) => {
                 if (response.status === 200) {
                     setMessage('Edited Customer: ' + newCustomer.companyName);
-                    setIsPositive(true);
+                    setPositiveMessage(true);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
                     setTimeout(() => {
@@ -61,7 +61,7 @@ const CustomerEdit = ({
             })
             .catch((error) => {
                 setMessage(error);
-                setIsPositive(false);
+                setPositiveMessage(false);
                 setShowMessage(true);
                 window.scrollBy(0, -10000);
                 setTimeout(() => {
