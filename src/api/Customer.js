@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-// second localhost baseUrl is for testing purposes (remember to comment it out when done testing)
+// bottom baseUrl is for testing the app while back end app is running in local host
 
-//  const baseUrl = "https://backendnw.azurewebsites.net/nw/customer"
-const baseUrl = 'https://localhost:7109/nw/customer';
+const baseUrl = process.env.REACT_APP_BASE_URL_CUST
+// const baseUrl = process.env.REACT_APP_BASE_URL_CUST_LOCAL
 
 let token = null;
 
@@ -40,7 +40,7 @@ const update = (object) => {
         headers: { Authorization: token },
     };
 
-    return axios.put(`${baseUrl}/${object.customerId}`, object, config);
+    return axios.put(`${baseUrl}/${object.customerID}`, object, config);
 };
 
 export default { setToken, getAll, create, remove, update };

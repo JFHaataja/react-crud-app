@@ -107,7 +107,7 @@ const Customers = ({ setMessage, setIsPositive, setShowMessage }) => {
                             if (lowerCaseName.indexOf(search) > -1) {
                                 return (
                                     <Customer
-                                        key={c.customerId}
+                                        key={c.customerID}
                                         customer={c}
                                         reloadNow={reloadNow}
                                         reload={reload}

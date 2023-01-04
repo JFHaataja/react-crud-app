@@ -23,7 +23,7 @@ const Customer = ({
         const response = window.confirm(`Remove Customer ${customer.companyName}`);
 
         if (response === true) {
-            CustomerService.remove(customer.customerId)
+            CustomerService.remove(customer.customerID)
                 .then((res) => {
                     if (res.status === 200) {
                         setMessage(`Successfully removed customer ${customer.companyName}`);

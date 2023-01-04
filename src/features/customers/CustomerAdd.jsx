@@ -12,7 +12,7 @@ import ArrowLeft from 'assets/Icon/ArrowLeft';
 const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }) => {
     // Komponentin tilan määritys
 
-    const [newCustomerId, setNewCustomerId] = useState('');
+    const [newcustomerID, setNewcustomerID] = useState('');
     const [newCompanyName, setNewCompanyName] = useState('');
     const [newContactName, setNewContactName] = useState('');
     const [newContactTitle, setNewContactTitle] = useState('');
@@ -30,7 +30,7 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
     const handleSubmit = (event) => {
         event.preventDefault();
         const newCustomer = {
-            customerId: newCustomerId.toUpperCase(),
+            customerID: newcustomerID.toUpperCase(),
             companyName: newCompanyName,
             contactName: newContactName,
             contactTitle: newContactTitle,
@@ -43,7 +43,7 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
             fax: newFax,
         };
 
-        if (newCustomer.customerId !== '') {
+        if (newCustomer.customerID !== '') {
             CustomerService.create(newCustomer)
                 .then((response) => {
                     if (response.status === 200) {
@@ -93,11 +93,11 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
                         <FormGroup
                             formLabelText={'Customer ID'}
                             inputType="text"
-                            inputValue={newCustomerId}
+                            inputValue={newcustomerID}
                             inputPlaceholder="ID with 5 capital letters"
                             inputMaxLength={'5'}
                             inputMinLength={'5'}
-                            onChangeHandler={({ target }) => setNewCustomerId(target.value)}
+                            onChangeHandler={({ target }) => setNewcustomerID(target.value)}
                             requiredOrNot={true}
                         />
                         <FormGroup

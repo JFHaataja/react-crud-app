@@ -16,7 +16,7 @@ const CustomerEdit = ({
     setShowMessage,
     customerForEdit,
 }) => {
-    const [newCustomerId] = useState(customerForEdit.customerId);
+    const [newcustomerID] = useState(customerForEdit.customerID);
     const [newCompanyName, setNewCompanyName] = useState(customerForEdit.companyName);
     const [newContactName, setNewContactName] = useState(customerForEdit.contactName);
     const [newContactTitle, setNewContactTitle] = useState(customerForEdit.contactTitle);
@@ -33,7 +33,7 @@ const CustomerEdit = ({
     const handleSubmit = (event) => {
         event.preventDefault();
         const newCustomer = {
-            customerId: newCustomerId,
+            customerID: newcustomerID,
             companyName: newCompanyName,
             contactName: newContactName,
             contactTitle: newContactTitle,
@@ -52,7 +52,7 @@ const CustomerEdit = ({
                     setMessage('Edited Customer: ' + newCustomer.companyName);
                     setIsPositive(true);
                     setShowMessage(true);
-                    window.scrollBy(0, -10000); // Scrollataan ylös jotta nähdään alert
+                    window.scrollBy(0, -10000);
                     setTimeout(() => {
                         setShowMessage(false);
                     }, 5000);
@@ -86,7 +86,7 @@ const CustomerEdit = ({
                         <FormGroup
                             formLabelText="Customer ID"
                             inputType="text"
-                            inputValue={newCustomerId}
+                            inputValue={newcustomerID}
                             inputPlaceholder="ID with 5 capital letters"
                             inputMaxLength={'5'}
                             inputMinLength={'5'}
