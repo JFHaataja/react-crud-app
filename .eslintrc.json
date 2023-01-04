@@ -1,6 +1,6 @@
 {
     "env": {
-        "browser": true,
+        "node": true,
         "es2021": true
     },
     "settings": {
@@ -30,6 +30,7 @@
         "indent": "off",
         "require-jsdoc": "off",
         "jsdoc/require-jsdoc": "off",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "no-undef": "off"
     }
 }
