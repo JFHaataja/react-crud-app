@@ -84,7 +84,7 @@ const Login = ({ setIsPositive, setMessage, setShowMessage, setLoggedInUser, set
                             formLabelText="Username"
                             inputType="text"
                             inputValue={username}
-                            inputPlaceholder="First Name"
+                            inputPlaceholder="Username"
                             onChangeHandler={({ target }) => setUsername(target.value)}
                             requiredOrNot={true}
                         />
