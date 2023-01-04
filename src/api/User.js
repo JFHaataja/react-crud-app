@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-// bottom baseUrl is for testing the app while back end app is running in local host
-
 const baseUrl = process.env.REACT_APP_BASE_URL_USER
-// const baseUrl = process.env.REACT_APP_BASE_URL_USER_LOCAL
 
 let token = null;
 
