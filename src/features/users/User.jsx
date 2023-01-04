@@ -4,7 +4,7 @@ import UserService from 'api/User';
 import TrashIcon from 'assets/Icon/TrashCan';
 import PenIcon from 'assets/Icon/Pen';
 
-const User = ({ user, editUser, setIsPositive, setMessage, setShowMessage, reload, reloadNow }) => {
+const User = ({ user, editUser, setPositiveMessage, setMessage, setShowMessage, reload, reloadNow }) => {
     const deleteUser = (user) => {
         const response = window.confirm(`Remove user ${user.firstname} ${user.lastname}?`);
 
@@ -13,7 +13,7 @@ const User = ({ user, editUser, setIsPositive, setMessage, setShowMessage, reloa
                 .then((res) => {
                     if (res.status === 200) {
                         setMessage(`Successfully removed user ${user.firstname} ${user.lastname}`);
-                        setIsPositive(true);
+                        setPositiveMessage(true);
                         setShowMessage(true);
                         window.scrollBy(0, -10000);
 
@@ -26,7 +26,7 @@ const User = ({ user, editUser, setIsPositive, setMessage, setShowMessage, reloa
 
                 .catch((error) => {
                     setMessage(error);
-                    setIsPositive(false);
+                    setPositiveMessage(false);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
 
@@ -36,7 +36,7 @@ const User = ({ user, editUser, setIsPositive, setMessage, setShowMessage, reloa
                 });
         } else {
             setMessage('User deletion cancelled successfully.');
-            setIsPositive(true);
+            setPositiveMessage(true);
             setShowMessage(true);
             window.scrollBy(0, -10000);
 

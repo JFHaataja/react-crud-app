@@ -12,7 +12,7 @@ import SearchBar from 'components/elements/Search/SearchBar';
 import Table from 'react-bootstrap/Table';
 import PlusIcon from 'assets/Icon/Plus';
 
-const Users = ({ setIsPositive, setShowMessage, setMessage, showSpinner }) => {
+const Users = ({ setPositiveMessage, setShowMessage, setMessage, showSpinner }) => {
     const [users, setUsers] = useState([]);
     const [addNewMode, setAddNewMode] = useState(false);
     const [editMode, setEditMode] = useState(false);
@@ -74,7 +74,7 @@ const Users = ({ setIsPositive, setShowMessage, setMessage, showSpinner }) => {
                 {addNewMode && (
                     <UserAdd
                         setAddNewMode={setAddNewMode}
-                        setIsPositive={setIsPositive}
+                        setPositiveMessage={setPositiveMessage}
                         setMessage={setMessage}
                         setShowMessage={setShowMessage}
                     />
@@ -83,7 +83,7 @@ const Users = ({ setIsPositive, setShowMessage, setMessage, showSpinner }) => {
                 {editMode && (
                     <UserEdit
                         setEditMode={setEditMode}
-                        setIsPositive={setIsPositive}
+                        setPositiveMessage={setPositiveMessage}
                         setMessage={setMessage}
                         setShowMessage={setShowMessage}
                         userForEdit={userForEdit}
@@ -121,7 +121,7 @@ const Users = ({ setIsPositive, setShowMessage, setMessage, showSpinner }) => {
                                                 user={u}
                                                 reloadNow={reloadNow}
                                                 reload={reload}
-                                                setIsPositive={setIsPositive}
+                                                setPositiveMessage={setPositiveMessage}
                                                 setMessage={setMessage}
                                                 setShowMessage={setShowMessage}
                                                 editUser={editUsers}

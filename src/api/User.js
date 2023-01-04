@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-// second localhost baseUrl is for testing purposes (remember to comment it out when done testing)
-
-// const baseUrl = "https://backendnw.azurewebsites.net/nw/users"
-const baseUrl = 'https://localhost:7109/nw/users';
+const baseUrl = process.env.REACT_APP_BASE_URL_USER
 
 let token = null;
 

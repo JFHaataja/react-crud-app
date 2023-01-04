@@ -1,13 +1,13 @@
 import 'assets/App.scss';
 import Toast from 'react-bootstrap/Toast';
 
-const Message = ({ message, isPositive }) => {
-    let tyyli = '';
+const Message = ({ message, positiveMessage }) => {
+    let style = '';
 
-    if (isPositive === true) {
-        tyyli = 'pos';
+    if (positiveMessage === true) {
+        style = 'bg-positive';
     } else {
-        tyyli = 'neg';
+        style = 'bg-negative';
     }
 
     return (
@@ -17,7 +17,7 @@ const Message = ({ message, isPositive }) => {
                 <strong className="me-auto">NW TRADERS</strong>
                 <small>Just now</small>
             </Toast.Header>
-            <Toast.Body className={tyyli}>{message}</Toast.Body>
+            <Toast.Body className={style}>{message}</Toast.Body>
         </Toast>
     );
 };

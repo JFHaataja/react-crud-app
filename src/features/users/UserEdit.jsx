@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ArrowLeft from 'assets/Icon/ArrowLeft';
 
-const UserEdit = ({ setEditMode, setIsPositive, setMessage, setShowMessage, userForEdit }) => {
+const UserEdit = ({ setEditMode, setPositiveMessage, setMessage, setShowMessage, userForEdit }) => {
     const [newUserId] = useState(userForEdit.userId);
     const [newUsername, setNewUsername] = useState(userForEdit.username);
     const [newPassword] = useState(userForEdit.password);
@@ -34,8 +34,8 @@ const UserEdit = ({ setEditMode, setIsPositive, setMessage, setShowMessage, user
         UserService.update(newUser)
             .then((response) => {
                 if (response.status === 200) {
-                    setMessage('Edited User: ' + newUser.username);
-                    setIsPositive(true);
+                    setMessage('Edited User ' + newUser.username);
+                    setPositiveMessage(true);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
                     setTimeout(() => {
@@ -46,7 +46,7 @@ const UserEdit = ({ setEditMode, setIsPositive, setMessage, setShowMessage, user
             })
             .catch((error) => {
                 setMessage(error);
-                setIsPositive(false);
+                setPositiveMessage(false);
                 setShowMessage(true);
                 window.scrollBy(0, -10000);
                 setTimeout(() => {
@@ -69,12 +69,6 @@ const UserEdit = ({ setEditMode, setIsPositive, setMessage, setShowMessage, user
             <Form onSubmit={handleSubmit} className="text-white text-start m-auto mt-3">
                 <Row>
                     <Col className="mx-0 mx-lg-5 px-0 px-lg-5">
-                        <FormGroup
-                            formLabelText={'User ID'}
-                            inputType="text"
-                            inputValue={newUserId}
-                            disabled
-                        />
                         <FormGroup
                             formLabelText="Username"
                             inputType="text"

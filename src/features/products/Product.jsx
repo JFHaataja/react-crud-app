@@ -7,7 +7,7 @@ import PenIcon from 'assets/Icon/Pen';
 const Product = ({
     product,
     editProduct,
-    setIsPositive,
+    setPositiveMessage,
     setMessage,
     setShowMessage,
     reload,
@@ -21,7 +21,7 @@ const Product = ({
                 .then((res) => {
                     if (res.status === 200) {
                         setMessage(`Successfully removed product ${product.productName}.`);
-                        setIsPositive(true);
+                        setPositiveMessage(true);
                         setShowMessage(true);
                         window.scrollBy(0, -10000);
 
@@ -33,7 +33,7 @@ const Product = ({
                 })
                 .catch((error) => {
                     setMessage(error);
-                    setIsPositive(false);
+                    setPositiveMessage(false);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
 
@@ -43,7 +43,7 @@ const Product = ({
                 });
         } else {
             setMessage('Product deletion cancelled successfully.');
-            setIsPositive(true);
+            setPositiveMessage(true);
             setShowMessage(true);
             window.scrollBy(0, -10000);
 

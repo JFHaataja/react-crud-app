@@ -11,7 +11,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ArrowLeft from 'assets/Icon/ArrowLeft';
 
-const UserAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }) => {
+const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage }) => {
     const [newFirstname, setNewFirstname] = useState('');
     const [newLastname, setNewLastname] = useState('');
     const [newEmail, setNewEmail] = useState('');
@@ -36,8 +36,8 @@ const UserAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }) =
             UserService.create(newUser)
                 .then((response) => {
                     if (response.status === 200) {
-                        setMessage(`Added new User: ${newUser.firstname} ${newUser.lastname}`);
-                        setIsPositive(true);
+                        setMessage(`Added new User ${newUser.firstname} ${newUser.lastname}`);
+                        setPositiveMessage(true);
                         setShowMessage(true);
                         setTimeout(() => {
                             setShowMessage(false);
@@ -48,7 +48,7 @@ const UserAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }) =
 
                 .catch((error) => {
                     setMessage(error);
-                    setIsPositive(false);
+                    setPositiveMessage(false);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
                     setTimeout(() => {
@@ -56,8 +56,8 @@ const UserAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }) =
                     }, 6000);
                 });
         } else {
-            setMessage('Passwords do not match.');
-            setIsPositive(false);
+            setMessage('Passwords do not match. Please check spelling.');
+            setPositiveMessage(false);
             setShowMessage(true);
             window.scrollBy(0, -10000);
 

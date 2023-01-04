@@ -9,10 +9,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ArrowLeft from 'assets/Icon/ArrowLeft';
 
-const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage }) => {
+const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage }) => {
     // Komponentin tilan määritys
 
-    const [newCustomerId, setNewCustomerId] = useState('');
+    const [newcustomerID, setNewcustomerID] = useState('');
     const [newCompanyName, setNewCompanyName] = useState('');
     const [newContactName, setNewContactName] = useState('');
     const [newContactTitle, setNewContactTitle] = useState('');
@@ -30,7 +30,7 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
     const handleSubmit = (event) => {
         event.preventDefault();
         const newCustomer = {
-            customerId: newCustomerId.toUpperCase(),
+            customerID: newcustomerID.toUpperCase(),
             companyName: newCompanyName,
             contactName: newContactName,
             contactTitle: newContactTitle,
@@ -43,12 +43,12 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
             fax: newFax,
         };
 
-        if (newCustomer.customerId !== '') {
+        if (newCustomer.customerID !== '') {
             CustomerService.create(newCustomer)
                 .then((response) => {
                     if (response.status === 200) {
                         setMessage('Added new Customer: ' + newCustomer.companyName);
-                        setIsPositive(true);
+                        setPositiveMessage(true);
                         setShowMessage(true);
                         window.scrollBy(0, -10000); // Scrollataan ylös jotta nähdään alert
                         setTimeout(() => {
@@ -59,7 +59,7 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
                 })
                 .catch((error) => {
                     setMessage(error);
-                    setIsPositive(false);
+                    setPositiveMessage(false);
                     setShowMessage(true);
                     window.scrollBy(0, -10000);
                     setTimeout(() => {
@@ -68,7 +68,7 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
                 });
         } else {
             setMessage('Customer ID can not be empty.');
-            setIsPositive(false);
+            setPositiveMessage(false);
             setShowMessage(true);
             window.scrollBy(0, -10000);
             setTimeout(() => {
@@ -93,11 +93,11 @@ const CustomerAdd = ({ setAddNewMode, setIsPositive, setMessage, setShowMessage 
                         <FormGroup
                             formLabelText={'Customer ID'}
                             inputType="text"
-                            inputValue={newCustomerId}
+                            inputValue={newcustomerID}
                             inputPlaceholder="ID with 5 capital letters"
                             inputMaxLength={'5'}
                             inputMinLength={'5'}
-                            onChangeHandler={({ target }) => setNewCustomerId(target.value)}
+                            onChangeHandler={({ target }) => setNewcustomerID(target.value)}
                             requiredOrNot={true}
                         />
                         <FormGroup

@@ -10,7 +10,7 @@ import SearchBar from 'components/elements/Search/SearchBar';
 import Spinner from 'components/elements/Spinner/Spinner';
 import PlusIcon from 'assets/Icon/Plus';
 
-const Products = ({ setIsPositive, setShowMessage, setMessage, showSpinner }) => {
+const Products = ({ setPositiveMessage, setShowMessage, setMessage, showSpinner }) => {
     const [products, setProducts] = useState([]);
     const [addNewMode, setAddNewMode] = useState(false);
     const [editMode, setEditMode] = useState(false);
@@ -74,7 +74,7 @@ const Products = ({ setIsPositive, setShowMessage, setMessage, showSpinner }) =>
                 {addNewMode && (
                     <ProductAdd
                         setAddNewMode={setAddNewMode}
-                        setIsPositive={setIsPositive}
+                        setPositiveMessage={setPositiveMessage}
                         setMessage={setMessage}
                         setShowMessage={setShowMessage}
                     />
@@ -83,7 +83,7 @@ const Products = ({ setIsPositive, setShowMessage, setMessage, showSpinner }) =>
                 {editMode && (
                     <ProductEdit
                         setEditMode={setEditMode}
-                        setIsPositive={setIsPositive}
+                        setPositiveMessage={setPositiveMessage}
                         setMessage={setMessage}
                         setShowMessage={setShowMessage}
                         productForEdit={productForEdit}
@@ -122,7 +122,7 @@ const Products = ({ setIsPositive, setShowMessage, setMessage, showSpinner }) =>
                                                 product={p}
                                                 reloadNow={reloadNow}
                                                 reload={reload}
-                                                setIsPositive={setIsPositive}
+                                                setPositiveMessage={setPositiveMessage}
                                                 setMessage={setMessage}
                                                 setShowMessage={setShowMessage}
                                                 editProduct={editProducts}

@@ -1,9 +1,6 @@
 import axios from 'axios';
 
-// second localhost baseUrl is for testing purposes (remember to comment it out when done testing)
-
-//  const baseUrl = "https://backendnw.azurewebsites.net/nw/customer"
-const baseUrl = 'https://localhost:7109/nw/customer';
+const baseUrl = process.env.REACT_APP_BASE_URL_CUST
 
 let token = null;
 
@@ -40,7 +37,7 @@ const update = (object) => {
         headers: { Authorization: token },
     };
 
-    return axios.put(`${baseUrl}/${object.customerId}`, object, config);
+    return axios.put(`${baseUrl}/${object.customerID}`, object, config);
 };
 
 export default { setToken, getAll, create, remove, update };
