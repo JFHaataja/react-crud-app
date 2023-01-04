@@ -1,7 +1,4 @@
-
-
 # React CRUD App ("NW Traders")
-
 
 React CRUD App (in-app name: NW Traders) is part of a full stack web application project. It is the front end application for an ASP .NET Core restful API back end service which I have running live on Microsoft Azure. To learn more about and to download the back end application of this project please visit [react-crud-app-backend](https://linkhere.com/).
 
@@ -17,7 +14,7 @@ This is a simple CRUD demo application for a fictional wholesale company called 
 
 Prerequisites:
 
- - Node 16+
+-   Node 16+
 
 To set up the app execute the following commands.
 
@@ -73,4 +70,3 @@ src
 **Front End:** React.js, SASS, React-Bootstrap, Vercel
 
 **Back End:** ASP .NET Core, Microsoft SQL, Microsoft Azure
-
