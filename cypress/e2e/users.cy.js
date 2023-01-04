@@ -1,11 +1,9 @@
-/* eslint-disable no-undef */
-
 describe('Not see user related content', () => {
     it('Basic users can not see or access app user related content', () => {
         // login with regular user account details
         cy.visit('http://localhost:3000/');
-        cy.findByLabelText(/username/i).type('john');
-        cy.findByLabelText(/password/i).type('johndoe');
+        cy.findByPlaceholderText(/username/i).type('john');
+        cy.findByPlaceholderText(/password/i).type('johndoe');
         cy.findByRole('button', { name: /login/i }).click();
         // verify that user can not access user tab in navbar
         cy.findByRole('link', { name: /users/i }).should('not.exist');
@@ -16,8 +14,8 @@ describe('Add, edit and delete users', () => {
     it('Admin user can first add a new user, then edit and finally delete it', () => {
         // login
         cy.visit('http://localhost:3000/');
-        cy.findByLabelText(/username/i).type('[INSERT-HERE-ADMIN-USERNAME]');
-        cy.findByLabelText(/password/i).type('[INSERT-HERE-ADMIN-PASSWORD]');
+        cy.findByPlaceholderText(/username/i).type('[INSERT-HERE-ADMIN-USERNAME]');
+        cy.findByPlaceholderText(/password/i).type('[INSERT-HERE-ADMIN-PASSWORD]');
         cy.findByRole('button', { name: /login/i }).click();
         // click navbar's Users link
         cy.findByRole('link', { name: /users/i }).should('be.visible');
@@ -35,6 +33,7 @@ describe('Add, edit and delete users', () => {
         cy.findByPlaceholderText(/first name/i).type('Jane');
         cy.findByPlaceholderText(/last name/i).type('doe');
         cy.findByPlaceholderText(/email/i).type('jane.doe@gmail.com');
+        cy.findByPlaceholderText(/access level/i).clear();
         cy.findByPlaceholderText(/access level/i).type('1');
         cy.findByPlaceholderText(/username/i).type('janedoe');
         cy.get('[data-cy="password1"]').type('janedoe');
