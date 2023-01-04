@@ -8,38 +8,38 @@ const baseUrl = 'https://localhost:7109/nw/products';
 let token = null;
 
 const setToken = (newToken) => {
- token = `bearer ${newToken}`;
+  token = `bearer ${newToken}`;
 };
 
 const getAll = () => {
- const config = {
-  headers: { Authorization: token },
- };
+  const config = {
+    headers: { Authorization: token },
+  };
 
- const request = axios.get(baseUrl, config);
- return request.then((response) => response.data);
+  const request = axios.get(baseUrl, config);
+  return request.then((response) => response.data);
 };
 
 const create = (newProduct) => {
- const config = {
-  headers: { Authorization: token },
- };
+  const config = {
+    headers: { Authorization: token },
+  };
 
- return axios.post(baseUrl, newProduct, config);
+  return axios.post(baseUrl, newProduct, config);
 };
 
 const remove = (id) => {
- const config = {
-  headers: { Authorization: token },
- };
- return axios.delete(`${baseUrl}/${id}`, config);
+  const config = {
+    headers: { Authorization: token },
+  };
+  return axios.delete(`${baseUrl}/${id}`, config);
 };
 
 const update = (object) => {
- const config = {
-  headers: { Authorization: token },
- };
- return axios.put(`${baseUrl}/${object.productId}`, object, config);
+  const config = {
+    headers: { Authorization: token },
+  };
+  return axios.put(`${baseUrl}/${object.productId}`, object, config);
 };
 
 export default { setToken, getAll, create, remove, update };
