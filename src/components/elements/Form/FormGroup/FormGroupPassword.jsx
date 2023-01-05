@@ -9,11 +9,13 @@ export default function PasswordInputGroup({
     requiredOrNot,
     formControlId,
     dataCy,
+    formLabelText,
+    formGroupControlId,
 }) {
     return (
         <>
-            <Form.Group className="mb-3">
-                <Form.Label>Password</Form.Label>
+            <Form.Group className="mb-3" controlId={formGroupControlId}>
+                <Form.Label>{formLabelText}</Form.Label>
                 <Form.Control
                     type={passwordType}
                     value={passwordValue}

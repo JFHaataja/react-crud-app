@@ -10,6 +10,7 @@ function PrimaryButton({
     endIcon,
     buttonId,
     dataCy,
+    ariaLabel,
 }) {
     return (
         <Button
@@ -19,6 +20,7 @@ function PrimaryButton({
             onClick={clickHandler}
             id={buttonId}
             data-cy={dataCy}
+            aria-label={ariaLabel}
         >
             {startIcon}
             {buttonText}

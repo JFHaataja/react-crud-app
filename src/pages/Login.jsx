@@ -4,8 +4,8 @@ import md5 from 'md5';
 import LoginService from 'api/Auth';
 import Button from 'components/elements/Button/PrimaryButton/PrimaryButton';
 import Form from 'react-bootstrap/Form';
-import FormGroup from 'components/elements/Form/FormGroup/FormGroup/FormGroup';
-import FormGroupPassword from 'components/elements/Form/FormGroup/FormGroup/FormGroupPassword';
+import FormGroup from 'components/elements/Form/FormGroup/FormGroup';
+import FormGroupPassword from 'components/elements/Form/FormGroup/FormGroupPassword';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -13,7 +13,13 @@ import Spinner from 'components/elements/Spinner/Spinner';
 import LogIn from 'assets/Icon/LogIn';
 import Cart from 'assets/Icon/Cart';
 
-const Login = ({ setPositiveMessage, setMessage, setShowMessage, setLoggedInUser, setAdminUser }) => {
+const Login = ({
+    setPositiveMessage,
+    setMessage,
+    setShowMessage,
+    setLoggedInUser,
+    setAdminUser,
+}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [buttonText, setButtonText] = useState('Login');

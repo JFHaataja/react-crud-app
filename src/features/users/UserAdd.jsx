@@ -4,8 +4,8 @@ import UserService from 'api/User';
 import md5 from 'md5';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import FormGroup from 'components/elements/Form/FormGroup/FormGroup/FormGroup';
-import FormGroupPassword from 'components/elements/Form/FormGroup/FormGroup/FormGroupPassword';
+import FormGroup from 'components/elements/Form/FormGroup/FormGroup';
+import FormGroupPassword from 'components/elements/Form/FormGroup/FormGroupPassword';
 import Button from 'components/elements/Button/PrimaryButton/PrimaryButton';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -87,6 +87,7 @@ const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage
                             inputPlaceholder="First Name"
                             onChangeHandler={({ target }) => setNewFirstname(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="FirstName"
                         />
                         <FormGroup
                             formLabelText="Last name"
@@ -95,6 +96,7 @@ const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage
                             inputPlaceholder="Last Name"
                             onChangeHandler={({ target }) => setNewLastname(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="LastName"
                         />
                         <FormGroup
                             formLabelText="Email"
@@ -103,14 +105,16 @@ const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage
                             inputPlaceholder="Email"
                             onChangeHandler={({ target }) => setNewEmail(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Email"
                         />
                         <FormGroup
-                            formLabelText="Access Level"
+                            formLabelText="Access Level ID (1=admin, 2=basic user)"
                             inputType="number"
                             inputValue={newAccesslevelId}
-                            inputPlaceholder="Access Level"
+                            inputPlaceholder="Access Level ID (1=admin, 2=basic user)"
                             onChangeHandler={({ target }) => setNewAccesslevelId(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="AccessLevelId"
                         />
                         <FormGroup
                             formLabelText="Username"
@@ -119,6 +123,7 @@ const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage
                             inputPlaceholder="Username"
                             onChangeHandler={({ target }) => setNewUsername(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Username"
                         />
                         <FormGroupPassword
                             passwordType="password"
@@ -128,6 +133,8 @@ const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage
                             requiredOrNot={true}
                             dataCy="password1"
                             formControlId={'password1'}
+                            formGroupControlId="password1"
+                            formLabelText={'Password'}
                         />
                         <FormGroupPassword
                             passwordType="password"
@@ -137,6 +144,8 @@ const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage
                             requiredOrNot={true}
                             dataCy="password2"
                             formControlId={'password2'}
+                            formGroupControlId="password2"
+                            formLabelText={'Confirm password'}
                         />
                         <div className="d-flex mt-5 justify-content-end">
                             <Button

@@ -104,8 +104,8 @@ const Products = ({ setPositiveMessage, setShowMessage, setMessage, showSpinner 
                                     <th scope="col">Units On Order</th>
                                     <th scope="col">Reorder Level</th>
                                     <th scope="col">Discontinued</th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
+                                    <td scope="col"></td>
+                                    <td scope="col"></td>
                                 </tr>
                             </thead>
                         )}

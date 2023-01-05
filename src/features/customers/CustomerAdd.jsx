@@ -3,7 +3,7 @@ import { useState } from 'react';
 import CustomerService from 'api/Customer';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import FormGroup from 'components/elements/Form/FormGroup/FormGroup/FormGroup';
+import FormGroup from 'components/elements/Form/FormGroup/FormGroup';
 import Button from 'components/elements/Button/PrimaryButton/PrimaryButton';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -99,6 +99,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputMinLength={'5'}
                             onChangeHandler={({ target }) => setNewcustomerID(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="CustomerID"
                         />
                         <FormGroup
                             formLabelText={'Company Name'}
@@ -107,6 +108,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputPlaceholder="Company Name"
                             onChangeHandler={({ target }) => setNewCompanyName(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Company Name"
                         />
                         <FormGroup
                             formLabelText={'Contact Name'}
@@ -115,6 +117,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputPlaceholder="Contact Name"
                             onChangeHandler={({ target }) => setNewContactName(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Contact Name"
                         />
                         <FormGroup
                             formLabelText={'Contact Title'}
@@ -123,6 +126,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputPlaceholder="Contact Title"
                             onChangeHandler={({ target }) => setNewContactTitle(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Contact Title"
                         />
                     </Col>
                     <Col sm={12} md={4}>
@@ -133,6 +137,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputPlaceholder="Country"
                             onChangeHandler={({ target }) => setNewCountry(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Country"
                         />
                         <FormGroup
                             formLabelText={'Address'}
@@ -141,6 +146,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputPlaceholder="Address"
                             onChangeHandler={({ target }) => setNewAddress(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Address"
                         />
                         <FormGroup
                             formLabelText={'City'}
@@ -149,6 +155,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputPlaceholder="City"
                             onChangeHandler={({ target }) => setNewCity(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="City"
                         />
                         <FormGroup
                             formLabelText={'Region'}
@@ -156,6 +163,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputValue={newRegion}
                             inputPlaceholder="Region"
                             onChangeHandler={({ target }) => setNewRegion(target.value)}
+                            formGroupControlId="Region"
                         />
                     </Col>
                     <Col sm={12} md={4}>
@@ -166,6 +174,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputPlaceholder="Postal Code"
                             onChangeHandler={({ target }) => setNewPostalCode(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Postal Code"
                         />
                         <FormGroup
                             formLabelText={'Phone'}
@@ -173,6 +182,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputValue={newPhone}
                             inputPlaceholder="Phone Number"
                             onChangeHandler={({ target }) => setNewPhone(target.value)}
+                            formGroupControlId="Phone"
                         />
                         <FormGroup
                             formLabelText={'Fax'}
@@ -180,6 +190,7 @@ const CustomerAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMes
                             inputValue={newFax}
                             inputPlaceholder="Fax Number"
                             onChangeHandler={({ target }) => setNewFax(target.value)}
+                            formGroupControlId="Fax"
                         />
                         <div className="d-flex mt-5 justify-content-end">
                             <Button
