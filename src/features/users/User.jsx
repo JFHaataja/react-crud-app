@@ -67,6 +67,7 @@ const User = ({ user, editUser, setPositiveMessage, setMessage, setShowMessage, 
                         startIcon={<PenIcon />}
                         dataCy="btnEdit"
                         buttonId={`btnEdit${user.username}`}
+                        ariaLabel={`Edit User ${user.firstname} ${user.lastname}`}
                     />
                 </td>
                 <td>
@@ -75,6 +76,7 @@ const User = ({ user, editUser, setPositiveMessage, setMessage, setShowMessage, 
                         startIcon={<TrashIcon />}
                         dataCy="btnDelete"
                         buttonId={`btnDelete${user.username}`}
+                        ariaLabel={`Delete User ${user.firstname} ${user.lastname}`}
                     />
                 </td>
             </tr>
