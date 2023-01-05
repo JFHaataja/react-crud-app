@@ -9,9 +9,9 @@ Logged in users get a JWT Access Token from the web API which is then stored in 
 
 ## Live demo
 
-Do you have log-in details for my application? Click the link below to log in to the live version:
+Do you have login details for my application? Click the link below to log in to the live version:
 
-[Live demo of the app](https://putlinkhere.com/)
+[Live demo of NW Traders](https://nwtraders.vercel.app/)
 
 ## Get started
 
@@ -76,9 +76,9 @@ src
 |
 +-- components        # shared components used across the entire application
 |
-+-- features          # feature based modules
++-- features          # feature based module files divided into their own subfolders
 |
-+-- pages             # separate files for all application pages.
++-- pages             # separate files for all application pages
 ```
 
 ## Tech Stack
