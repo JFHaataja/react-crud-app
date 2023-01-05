@@ -10,10 +10,11 @@ function FormGroup({
     inputMinLength,
     onChangeHandler,
     requiredOrNot,
+    formGroupControlId
 }) {
     return (
         <>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" controlId={formGroupControlId}>
                 <Form.Label>{formLabelText}</Form.Label>
                 <Form.Control
                     type={inputType}
