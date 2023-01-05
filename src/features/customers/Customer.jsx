@@ -67,9 +67,9 @@ const Customer = ({
                 className="h-100 py-5 cursor-pointer text-dark bg-drinks"
             >
                 <Card.Body className="text-white">
-                    <h4>
+                    <h2 className="fs-4">
                         {customer.companyName}, {customer.country}
-                    </h4>
+                    </h2>
                     {showDetails && (
                         <div>
                             <div className="mb-3">
@@ -78,12 +78,14 @@ const Customer = ({
                                     startIcon={<TrashIcon />}
                                     dataCy="btnDelete"
                                     buttonId={`btnDelete${customer.companyName}`}
+                                    ariaLabel={`Delete Customer ${customer.companyName}`}
                                 />
                                 <Button
                                     clickHandler={() => editCustomer(customer)}
                                     startIcon={<PenIcon />}
                                     dataCy="btnEdit"
                                     buttonId={`btnEdit${customer.companyName}`}
+                                    ariaLabel={`Edit Customer ${customer.companyName}`}
                                 />
                             </div>
                             <Table responsive variant="dark" className="text-start">
