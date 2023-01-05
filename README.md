@@ -62,7 +62,7 @@ If you aren't satisfied with the build tool and configuration choices, you can e
 
 ## Important
 
-If I've applied for a job in your company, you can find the .env file content along with the necessary log-in details in my job application. And if I haven't and you'd like to try out my application, please send me an
+If I've applied for a job in your company, you can find the .env file content along with the necessary login details in my job application. And if I haven't and you'd like to try out my application, please send me an
 e-mail at jon.haataja@gmail.com.
 
 ## Project Structure
@@ -95,7 +95,9 @@ To open up Cypress testing tool run the following command:
 
 `npm run cypress:open`
 
-You can run the tests after you have added the necessary .env content.
+You can run the tests after you have added the necessary .env content and updated the login details into the test files. To update the login details, open up the e2e folder in the cypress folder and replace the parts where the code instructs you to do so:
+
+![image](https://user-images.githubusercontent.com/96774962/210837644-8c2afa4d-6287-4f5f-941e-b789670e4446.png)
 
 ## Contact
 
