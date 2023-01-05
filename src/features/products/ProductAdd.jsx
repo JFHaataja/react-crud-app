@@ -3,8 +3,9 @@ import { useState } from 'react';
 import ProductService from 'api/Product';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import FormGroup from 'components/elements/Form/FormGroup/FormGroup/FormGroup';
+import FormGroup from 'components/elements/Form/FormGroup/FormGroup';
 import Button from 'components/elements/Button/PrimaryButton/PrimaryButton';
+import RadioButton from 'components/elements/Button/RadioButton/RadioButton';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ArrowLeft from 'assets/Icon/ArrowLeft';
@@ -80,6 +81,7 @@ const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMess
                             inputPlaceholder="Product Name"
                             onChangeHandler={({ target }) => setNewProductName(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="ProductName"
                         />
                         <FormGroup
                             formLabelText={'Supplier ID'}
@@ -88,6 +90,7 @@ const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMess
                             inputPlaceholder="Supplier ID"
                             onChangeHandler={({ target }) => setNewProductSupplierId(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="SupplierId"
                         />
                         <FormGroup
                             formLabelText={'Category ID'}
@@ -96,6 +99,7 @@ const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMess
                             inputPlaceholder="Category ID"
                             onChangeHandler={({ target }) => setNewProductCategoryId(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="CategoryId"
                         />
                         <FormGroup
                             formLabelText={'Quantity Per Unit'}
@@ -104,6 +108,7 @@ const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMess
                             inputPlaceholder="Quantity Per Unit"
                             onChangeHandler={({ target }) => setNewQuantityPerUnit(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="QuantityPerUnit"
                         />
                         <FormGroup
                             formLabelText={'Unit Price'}
@@ -112,6 +117,7 @@ const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMess
                             inputPlaceholder="Unit Price"
                             onChangeHandler={({ target }) => setNewProductUnitPrice(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="UnitPrice"
                         />
                         <FormGroup
                             formLabelText={'Units In Stock'}
@@ -122,6 +128,7 @@ const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMess
                                 setNewProductUnitsInStock(target.value)
                             }
                             requiredOrNot={true}
+                            formGroupControlId="UnitsInStock"
                         />
                         <FormGroup
                             formLabelText={'Units On Order'}
@@ -132,6 +139,7 @@ const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMess
                                 setNewProductUnitsOnOrder(target.value)
                             }
                             requiredOrNot={true}
+                            formGroupControlId="UnitsOnOrder"
                         />
                         <FormGroup
                             formLabelText={'Reorder Level'}
@@ -142,41 +150,35 @@ const ProductAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMess
                                 setNewProductReorderLevel(target.value)
                             }
                             requiredOrNot={true}
+                            formGroupControlId="ReorderLevel"
                         />
-                        <div>
-                            <p className="mb-2">Discontinued</p>
-                        </div>
                         <div
                             onChange={({ target }) =>
                                 setNewProductDiscontinued(parseInt(target.value))
                             }
                         >
+                        <div>
+                            <p className="mb-2">Discontinued</p>
+                        </div>
                             <div className="mb-2">
-                                <input
-                                    className="form-check-input me-2"
-                                    id="radio01"
-                                    type="radio"
-                                    name={newProductDiscontinued.toString()}
-                                    defaultValue={1}
-                                    checked={radioButtonValue === 1}
-                                    onChange={() => setRadioButtonValue(1)}
-                                />
-                                <label className="form-check-label" htmlFor="radio01">
-                                    True
-                                </label>
+                                <RadioButton
+                                rBId={"radio01"}
+                                rBName={newProductDiscontinued.toString()}
+                                defaultValue={1}
+                                checkedOrNot={radioButtonValue === 1}
+                                onChangeHandler={() => setRadioButtonValue(1)}
+                                rBLabel={"True"}
+                                />                            
                             </div>
                             <div>
-                                <input
-                                    className="form-check-input me-2"
-                                    type="radio"
-                                    name={newProductDiscontinued.toString()}
-                                    defaultValue={0}
-                                    checked={radioButtonValue === 0}
-                                    onChange={() => setRadioButtonValue(0)}
+                                <RadioButton
+                                rBId={"radio02"}
+                                rBName={newProductDiscontinued.toString()}
+                                defaultValue={0}
+                                checkedOrNot={radioButtonValue === 0}
+                                onChangeHandler={() => setRadioButtonValue(0)}
+                                rBLabel={"False"}
                                 />
-                                <label className="form-check-label" htmlFor="radio02">
-                                    False
-                                </label>
                             </div>
                         </div>
                         <div className="d-flex mt-5 justify-content-end">

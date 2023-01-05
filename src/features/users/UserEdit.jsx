@@ -4,7 +4,7 @@ import UserService from 'api/User';
 import md5 from 'md5';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-import FormGroup from 'components/elements/Form/FormGroup/FormGroup/FormGroup';
+import FormGroup from 'components/elements/Form/FormGroup/FormGroup';
 import Button from 'components/elements/Button/PrimaryButton/PrimaryButton';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -76,6 +76,7 @@ const UserEdit = ({ setEditMode, setPositiveMessage, setMessage, setShowMessage,
                             inputPlaceholder="Username"
                             onChangeHandler={({ target }) => setNewUsername(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Username"
                         />
                         <FormGroup
                             formLabelText="First Name"
@@ -84,6 +85,7 @@ const UserEdit = ({ setEditMode, setPositiveMessage, setMessage, setShowMessage,
                             inputPlaceholder="First Name"
                             onChangeHandler={({ target }) => setNewFirstname(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="FirstName"
                         />
 
                         <FormGroup
@@ -93,6 +95,7 @@ const UserEdit = ({ setEditMode, setPositiveMessage, setMessage, setShowMessage,
                             inputPlaceholder="Last Name"
                             onChangeHandler={({ target }) => setNewLastname(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="LastName"
                         />
                         <FormGroup
                             formLabelText="Email"
@@ -101,14 +104,16 @@ const UserEdit = ({ setEditMode, setPositiveMessage, setMessage, setShowMessage,
                             inputPlaceholder="Email"
                             onChangeHandler={({ target }) => setNewEmail(target.value)}
                             requiredOrNot={false}
+                            formGroupControlId="Email"
                         />
                         <FormGroup
-                            formLabelText="Access Level (1=admin, 2=basic user)"
+                            formLabelText="Access Level ID (1=admin, 2=basic user)"
                             inputType="text"
                             inputValue={newAccesslevelId}
                             inputPlaceholder="Access Level ID (1=admin, 2=basic user)"
                             onChangeHandler={({ target }) => setNewAccesslevelId(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="AccessLevelId"
                         />
                         <div className="d-flex mt-5 justify-content-end">
                             <Button
