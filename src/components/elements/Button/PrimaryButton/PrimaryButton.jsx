@@ -10,7 +10,7 @@ function PrimaryButton({
     endIcon,
     buttonId,
     dataCy,
-    ariaLabel
+    ariaLabel,
 }) {
     return (
         <Button

@@ -134,7 +134,7 @@ const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage
                             dataCy="password1"
                             formControlId={'password1'}
                             formGroupControlId="password1"
-                            formLabelText={"Password"}
+                            formLabelText={'Password'}
                         />
                         <FormGroupPassword
                             passwordType="password"
@@ -145,7 +145,7 @@ const UserAdd = ({ setAddNewMode, setPositiveMessage, setMessage, setShowMessage
                             dataCy="password2"
                             formControlId={'password2'}
                             formGroupControlId="password2"
-                            formLabelText={"Confirm password"}
+                            formLabelText={'Confirm password'}
                         />
                         <div className="d-flex mt-5 justify-content-end">
                             <Button

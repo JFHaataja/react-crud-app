@@ -10,7 +10,7 @@ function FormGroup({
     inputMinLength,
     onChangeHandler,
     requiredOrNot,
-    formGroupControlId
+    formGroupControlId,
 }) {
     return (
         <>

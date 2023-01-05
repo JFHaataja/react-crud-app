@@ -10,7 +10,7 @@ export default function PasswordInputGroup({
     formControlId,
     dataCy,
     formLabelText,
-    formGroupControlId
+    formGroupControlId,
 }) {
     return (
         <>

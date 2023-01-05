@@ -13,7 +13,13 @@ import Spinner from 'components/elements/Spinner/Spinner';
 import LogIn from 'assets/Icon/LogIn';
 import Cart from 'assets/Icon/Cart';
 
-const Login = ({ setPositiveMessage, setMessage, setShowMessage, setLoggedInUser, setAdminUser }) => {
+const Login = ({
+    setPositiveMessage,
+    setMessage,
+    setShowMessage,
+    setLoggedInUser,
+    setAdminUser,
+}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [buttonText, setButtonText] = useState('Login');

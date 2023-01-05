@@ -4,7 +4,15 @@ import UserService from 'api/User';
 import TrashIcon from 'assets/Icon/TrashCan';
 import PenIcon from 'assets/Icon/Pen';
 
-const User = ({ user, editUser, setPositiveMessage, setMessage, setShowMessage, reload, reloadNow }) => {
+const User = ({
+    user,
+    editUser,
+    setPositiveMessage,
+    setMessage,
+    setShowMessage,
+    reload,
+    reloadNow,
+}) => {
     const deleteUser = (user) => {
         const response = window.confirm(`Remove user ${user.firstname} ${user.lastname}?`);
 

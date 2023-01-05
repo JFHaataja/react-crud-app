@@ -26,6 +26,7 @@ git clone https://github.com/JFHaataja/react-crud-app
 cd react-crud-app
 npm install
 ```
+
 After everything has finished installing, you need to then create an empty .env file at the root level of the project:
 
 ![image](https://user-images.githubusercontent.com/96774962/210604332-98094c22-d35b-467e-b79a-388dc4e82def.png)
@@ -61,7 +62,7 @@ If you aren't satisfied with the build tool and configuration choices, you can e
 
 ## Important
 
-If I've applied for a job in your company, you can find the .env file content along with the necessary log-in details in my job application. And if I haven't and you'd like to try out my application, please send me an 
+If I've applied for a job in your company, you can find the .env file content along with the necessary log-in details in my job application. And if I haven't and you'd like to try out my application, please send me an
 e-mail at jon.haataja@gmail.com.
 
 ## Project Structure

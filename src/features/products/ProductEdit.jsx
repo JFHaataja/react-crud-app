@@ -166,31 +166,33 @@ const ProductEdit = ({
                             requiredOrNot={true}
                             formGroupControlId="ReorderLevel"
                         />
-                        <div id="rBFormEdit"
+                        <div
+                            id="rBFormEdit"
                             onChange={({ target }) =>
                                 setNewProductDiscontinued(parseInt(target.value))
-                            }>
+                            }
+                        >
                             <div>
                                 <p className="mb-2">Discontinued</p>
                             </div>
                             <div className="mb-2">
-                            <RadioButton
-                                rBId={"radio01"}
-                                rBName={newProductDiscontinued.toString()}
-                                defaultValue={1}
-                                checkedOrNot={radioButtonValue === 1}
-                                onChangeHandler={() => setRadioButtonValue(1)}
-                                rBLabel={"True"}
+                                <RadioButton
+                                    rBId={'radio01'}
+                                    rBName={newProductDiscontinued.toString()}
+                                    defaultValue={1}
+                                    checkedOrNot={radioButtonValue === 1}
+                                    onChangeHandler={() => setRadioButtonValue(1)}
+                                    rBLabel={'True'}
                                 />
                             </div>
                             <div>
                                 <RadioButton
-                                rBId={"radio02"}
-                                rBName={newProductDiscontinued.toString()}
-                                defaultValue={0}
-                                checkedOrNot={radioButtonValue === 0}
-                                onChangeHandler={() => setRadioButtonValue(0)}
-                                rBLabel={"False"}
+                                    rBId={'radio02'}
+                                    rBName={newProductDiscontinued.toString()}
+                                    defaultValue={0}
+                                    checkedOrNot={radioButtonValue === 0}
+                                    onChangeHandler={() => setRadioButtonValue(0)}
+                                    rBLabel={'False'}
                                 />
                             </div>
                         </div>
