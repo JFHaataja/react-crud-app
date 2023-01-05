@@ -93,16 +93,18 @@ const Login = ({
                             inputPlaceholder="Username"
                             onChangeHandler={({ target }) => setUsername(target.value)}
                             requiredOrNot={true}
+                            formGroupControlId="Username"
                         />
 
                         <FormGroupPassword
+                            formLabelText={"Password"}
                             passwordType="password"
                             passwordValue={password}
                             passwordPlaceholder="Password"
                             onChangeHandler={({ target }) => setPassword(target.value)}
                             requiredOrNot={true}
                             dataCy="passwordLogin"
-                            formControlId={'passwordLogin'}
+                            formGroupControlId="PasswordLogin"
                         />
 
                         <Form.Group>
