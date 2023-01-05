@@ -2,8 +2,8 @@ describe('Add, edit and delete customers', () => {
     it('user can first add a new customer, then edit and finally delete it', () => {
         // login
         cy.visit('http://localhost:3000/');
-        cy.findByPlaceholderText(/username/i).type('johndoe');
-        cy.findByPlaceholderText(/password/i).type('johndoe');
+        cy.findByPlaceholderText(/username/i).type('[INSERT-HERE-BASIC-OR-ADMIN-USERNAME]');
+        cy.findByPlaceholderText(/password/i).type('[INSERT-HERE-BASIC-OR-ADMIN-PASSWORD]');
         cy.findByRole('button', { name: /login/i }).click();
         // click navbar's Customers link
         cy.findByRole('link', { name: /customers/i }).click();

@@ -2,8 +2,8 @@ describe('Add, edit and delete products', () => {
     it('user can first add a new product, then edit and finally delete it', () => {
         // login
         cy.visit('http://localhost:3000/');
-        cy.findByPlaceholderText(/username/i).type('johndoe');
-        cy.findByPlaceholderText(/password/i).type('johndoe');
+        cy.findByPlaceholderText(/username/i).type('[INSERT-HERE-BASIC-OR-ADMIN-USER-USERNAME]');
+        cy.findByPlaceholderText(/password/i).type('[INSERT-HERE-BASIC-OR-ADMIN-USER-PASSWORD]');
         cy.findByRole('button', { name: /login/i }).click();
         // click navbar's Products link
         cy.findByRole('link', { name: /products/i }).click();
