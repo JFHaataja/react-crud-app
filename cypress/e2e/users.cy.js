@@ -2,8 +2,8 @@ describe('Not see user related content', () => {
     it('Basic users can not see or access app user related content', () => {
         // login with regular user account details
         cy.visit('http://localhost:3000/');
-        cy.findByPlaceholderText(/username/i).type('john');
-        cy.findByPlaceholderText(/password/i).type('johndoe');
+        cy.findByPlaceholderText(/username/i).type('[INSERT-HERE-BASIC-USER-USERNAME]');
+        cy.findByPlaceholderText(/password/i).type('[INSERT-HERE-BASIC-USER-PASSWORD]');
         cy.findByRole('button', { name: /login/i }).click();
         // verify that user can not access user tab in navbar
         cy.findByRole('link', { name: /users/i }).should('not.exist');
@@ -14,8 +14,8 @@ describe('Add, edit and delete users', () => {
     it('Admin user can first add a new user, then edit and finally delete it', () => {
         // login
         cy.visit('http://localhost:3000/');
-        cy.findByPlaceholderText(/username/i).type('[INSERT-HERE-ADMIN-USERNAME]');
-        cy.findByPlaceholderText(/password/i).type('[INSERT-HERE-ADMIN-PASSWORD]');
+        cy.findByPlaceholderText(/username/i).type('[INSERT-HERE-ADMIN-USER-USERNAME]');
+        cy.findByPlaceholderText(/password/i).type('[INSERT-HERE-ADMIN-USER-PASSWORD]');
         cy.findByRole('button', { name: /login/i }).click();
         // click navbar's Users link
         cy.findByRole('link', { name: /users/i }).should('be.visible');

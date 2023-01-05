@@ -2,8 +2,8 @@ describe('Add, edit and delete customers', () => {
     it('user can first add a new customer, then edit and finally delete it', () => {
         // login
         cy.visit('http://localhost:3000/');
-        cy.findByPlaceholderText(/username/i).type('[INSERT-HERE-BASIC-OR-ADMIN-USERNAME]');
-        cy.findByPlaceholderText(/password/i).type('[INSERT-HERE-BASIC-OR-ADMIN-PASSWORD]');
+        cy.findByPlaceholderText(/username/i).type('[INSERT-HERE-ADMIN-OR-BASIC-USER-PASSWORD]');
+        cy.findByPlaceholderText(/password/i).type('[INSERT-HERE-ADMIN-OR-BASIC-USER-PASSWORD]');
         cy.findByRole('button', { name: /login/i }).click();
         // click navbar's Customers link
         cy.findByRole('link', { name: /customers/i }).click();
@@ -20,7 +20,7 @@ describe('Add, edit and delete customers', () => {
         cy.findByPlaceholderText(/id with 5 capital letters/i).type('atria');
         cy.findByPlaceholderText(/company name/i).type('Atria');
         cy.findByPlaceholderText(/contact name/i).type('John Doe');
-        cy.findByPlaceholderText(/contact title/i).type('marketing executive');
+        cy.findByPlaceholderText(/contact title/i).type('Marketing executive');
         cy.findByPlaceholderText(/country/i).type('Finland');
         cy.findByPlaceholderText(/address/i).type('Kirkkokatu 4 A 5');
         cy.findByPlaceholderText(/city/i).type('Helsinki');
