@@ -71,6 +71,7 @@ const Product = ({
                         startIcon={<PenIcon />}
                         dataCy="btnEdit"
                         buttonId={`btnEdit${product.productName}`}
+                        ariaLabel={`Edit Product ${product.productName}`}
                     />
                 </td>
                 <td>
@@ -79,6 +80,7 @@ const Product = ({
                         startIcon={<TrashIcon />}
                         dataCy="btnDelete"
                         buttonId={`btnDelete${product.productName}`}
+                        ariaLabel={`Delete Product ${product.productName}`}
                     />
                 </td>
             </tr>
