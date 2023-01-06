@@ -1,6 +1,6 @@
 # React CRUD App ("NW Traders")
 
-React CRUD App (in-app name: NW Traders) is part of a Full Stack web application project. It is the React.js SPA application for an ASP .NET Core restful API Back End service.
+React CRUD App (in-app name: NW Traders) is part of a Full Stack Web Application project consisting of two separate applications. It is the React.js SPA Front End application for an ASP .NET Core RESTful API Back End service. I've built both applications myself and published them to Vercel (React App) and Azure (ASP .NET Core App). My Back End RESTful Application is in a private repository for security matters but if you'd like to take a look at it, please send me a message at jon.haataja@gmail.com so I can invite you to that repository.
 
 ## Application overview
 
